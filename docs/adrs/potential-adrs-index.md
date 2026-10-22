@@ -50,9 +50,9 @@
 | Asynchronous Job Processing with Redis 7 and Sidekiq 7 | Technology | 130 | [Link](./potential-adrs/must-document/ASYNC/asynchronous-job-processing-with-redis-and-sidekiq.md) |
 
 ### Module: DATA
-| Title | Category | Score | File |
-|-------|----------|-------|------|
-| PostgreSQL 16 as Authoritative ACID Datastore with Defense-in-Depth CHECK Constraints and Composite Indexing | Technology / Architecture / Performance | 150 | [Link](./potential-adrs/must-document/DATA/postgresql-16-authoritative-acid-datastore-with-check-constraints-and-composite-indexing.md) |
+| Title | Category | Score | File | Status |
+|-------|----------|-------|------|--------|
+| PostgreSQL 16 as Authoritative ACID Datastore with Defense-in-Depth CHECK Constraints and Composite Indexing | Technology / Architecture / Performance | 150 | [Formal ADR](../adrs/ADR-005-postgresql-16-authoritative-acid-datastore.md) | Formalized (ADR-005) |
 
 ---
 
