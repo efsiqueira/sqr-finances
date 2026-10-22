@@ -146,8 +146,8 @@ end
 
 ## 5. Definition of Done (DoD)
 
-- [ ] `docker compose up -d` sobe `postgres` e `redis` com status `healthy`.
-- [ ] `bin/rails db:prepare` cria os bancos `sqr_finances_development` e `sqr_finances_test`.
-- [ ] `bundle exec rspec` executa e passa sem erros.
-- [ ] `bundle exec rubocop` executa com 0 ofensas.
-- [ ] Formalizar a `docs/adrs/ADR-005-postgresql-16-authoritative-acid-datastore.md` a partir do rascunho em `potential-adrs/must-document/DATA/`.
+- [x] `docker compose up -d` sobe `postgres` e `redis` com status `healthy`.
+- [x] `bin/rails db:prepare` cria os bancos `sqr_finances_development` e `sqr_finances_test`.
+- [x] `bundle exec rspec` executa e passa sem erros.
+- [x] `bundle exec rubocop` executa com 0 ofensas.
+- [x] Formalizar a `docs/adrs/ADR-005-postgresql-16-authoritative-acid-datastore.md` a partir do rascunho em `potential-adrs/must-document/DATA/`.
