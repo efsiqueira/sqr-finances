@@ -36,6 +36,8 @@ module SqrFinances
     config.time_zone = "America/Sao_Paulo"
     config.active_record.default_timezone = :utc
 
+    config.active_job.queue_adapter = :sidekiq
+
     config.generators do |g|
       g.test_framework :rspec,
         fixtures: false,
