@@ -141,8 +141,8 @@ end
 
 ## 5. Definition of Done (DoD)
 
-- [ ] `bundle install` instala `sidekiq` e `sidekiq-cron`.
-- [ ] `config/initializers/sidekiq.rb`, `config/sidekiq.yml` e `config/schedule.yml` criados.
-- [ ] `Procfile.dev` atualizado com o processo `worker`.
-- [ ] `bundle exec rspec spec/config/sidekiq_config_spec.rb` passa com sucesso.
-- [ ] Formalizar a `docs/adrs/ADR-006-asynchronous-job-processing-with-redis-and-sidekiq.md` a partir do rascunho em `potential-adrs/must-document/ASYNC/`.
+- [x] `bundle install` instala `sidekiq` e `sidekiq-cron`.
+- [x] `config/initializers/sidekiq.rb`, `config/sidekiq.yml` e `config/schedule.yml` criados.
+- [x] `Procfile.dev` atualizado com o processo `worker`.
+- [x] `bundle exec rspec spec/config/sidekiq_config_spec.rb` passa com sucesso.
+- [x] Formalizar a `docs/adrs/ADR-006-asynchronous-job-processing-with-redis-and-sidekiq.md` a partir do rascunho em `potential-adrs/must-document/ASYNC/`.

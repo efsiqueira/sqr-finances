@@ -45,9 +45,9 @@
 | Database-Enforced Idempotency via RecurrenceExecution Audit Table | Architecture | 125 | [Link](./potential-adrs/must-document/REC/database-enforced-idempotency-via-recurrence-execution.md) |
 
 ### Module: ASYNC
-| Title | Category | Score | File |
-|-------|----------|-------|------|
-| Asynchronous Job Processing with Redis 7 and Sidekiq 7 | Technology | 130 | [Link](./potential-adrs/must-document/ASYNC/asynchronous-job-processing-with-redis-and-sidekiq.md) |
+| Title | Category | Score | File | Status |
+|-------|----------|-------|------|--------|
+| Asynchronous Job Processing with Redis 7 and Sidekiq 7 | Technology | 130 | [Formal ADR](../adrs/ADR-006-asynchronous-job-processing-with-redis-and-sidekiq.md) | Formalized (ADR-006) |
 
 ### Module: DATA
 | Title | Category | Score | File | Status |
