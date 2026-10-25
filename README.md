@@ -3,7 +3,7 @@
 Aplicação web para controle financeiro pessoal e gestão de fluxo de caixa (MVP).
 
 ## Stack Tecnológica
-- **Ruby:** 3.2+
+- **Ruby:** 3.3.7 (ou 3.3+)
 - **Rails:** 8.0
 - **Frontend / Reatividade:** Hotwire (Turbo & Stimulus) + Tailwind CSS
 - **Banco de Dados:** PostgreSQL 16 (Authoritative ACID Datastore)
@@ -14,7 +14,7 @@ Aplicação web para controle financeiro pessoal e gestão de fluxo de caixa (MV
 
 ### 1. Pré-requisitos
 - Docker e Docker Compose
-- Ruby 3.2+
+- Ruby 3.3.7 (ou 3.3+)
 - Bundler
 
 ### 2. Subir Serviços de Banco e Cache
