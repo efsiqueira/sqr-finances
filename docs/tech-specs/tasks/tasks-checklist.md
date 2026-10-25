@@ -7,8 +7,7 @@ Este documento consolida o acompanhamento operacional e o status de implementaç
 ## 1. Visão Geral do Progresso
 
 - **Progresso Global:** `2 / 13 tasks (15.4%)`
-- **Tasks Concluídas com PR Aberto:** 1 (`T-001`)
-- **Tasks Concluídas:** 1 (`T-002`)
+- **Tasks Concluídas com PR Aberto:** 2 (`T-001`, `T-002`)
 - **Tasks Desbloqueadas / Prontas para Execução:** 1 (`T-003`)
 - **Tasks Bloqueadas por Dependências:** 10 (`T-004` até `T-013`)
 
@@ -24,7 +23,7 @@ Este documento consolida o acompanhamento operacional e o status de implementaç
 | ID | Status | Tech Spec | Título | Branch | Dependência | ADR Relacionada |
 |:---:|:---:|---|---|---|---|---|
 | `T-001` | 🟢 PR Aberto | [TS-T001](./TS-T001-bootstrap-rails-docker-rspec.md) | Bootstrap Rails 8, Docker Compose & Suíte RSpec | `chore/T-001-bootstrap-rails-docker-rspec` | Nenhuma | `ADR-005` (Formalizada) |
-| `T-002` | 🟢 Concluída | [TS-T002](./TS-T002-setup-sidekiq-cron-redis.md) | Configuração do Sidekiq 7, Sidekiq Cron & Redis Queue | `chore/T-002-setup-sidekiq-cron-redis` | `T-001` | `ADR-006` (Formalizada) |
+| `T-002` | 🟢 PR Aberto | [TS-T002](./TS-T002-setup-sidekiq-cron-redis.md) | Configuração do Sidekiq 7, Sidekiq Cron & Redis Queue | `chore/T-002-setup-sidekiq-cron-redis` | `T-001` | `ADR-006` (Formalizada) |
 | `T-003` | 🟡 Pronta | [TS-T003](./TS-T003-user-model-and-migration.md) | Migration & Model User (Credenciais Únicas & Bcrypt) | `feat/T-003-user-model-and-migration` | `T-001` | `ADR-007` |
 | `T-004` | 🔴 Bloqueada | [TS-T004](./TS-T004-session-auth-and-tenant-isolation.md) | Autenticação Dual, Current.user & Isolamento 404 | `feat/T-004-session-auth-and-tenant-isolation` | `T-003` | `ADR-008` |
 | `T-005` | 🔴 Bloqueada | [TS-T005](./TS-T005-transaction-model-and-schema.md) | Migration & Model Transaction (Constraints & Índice) | `feat/T-005-transaction-model-and-schema` | `T-003` | `ADR-009` |
@@ -121,11 +120,12 @@ flowchart TD
 ### Onda 2: Infraestrutura Assíncrona & Identidade Base
 
 #### [x] `T-002`: Configuração do Sidekiq 7, Sidekiq Cron e Redis Queue
-- **Status:** 🟢 **Concluída**
+- **Status:** 🟢 **Concluída com PR Aberto**
 - **Tech Spec:** [TS-T002-setup-sidekiq-cron-redis.md](./TS-T002-setup-sidekiq-cron-redis.md)
 - **Branch:** `chore/T-002-setup-sidekiq-cron-redis`
 - **Dependência:** `T-001`
 - **ADR Formalizada:** [ADR-006: Asynchronous Job Processing with Redis 7, Sidekiq 7 and Sidekiq Cron](../../adrs/ADR-006-asynchronous-job-processing-with-redis-and-sidekiq.md)
+- **Pull Request:** [PR #2](https://github.com/efsiqueira/sqr-finances/pull/2)
 - **Definition of Done (DoD):**
   - [x] `bundle install` instala `sidekiq` e `sidekiq-cron`.
   - [x] `config/initializers/sidekiq.rb`, `config/sidekiq.yml` e `config/schedule.yml` criados.
@@ -133,6 +133,7 @@ flowchart TD
   - [x] `bundle exec rspec spec/config/sidekiq_config_spec.rb` passa com sucesso.
   - [x] `bundle exec rubocop` com 0 ofensas.
   - [x] Formalizar a `ADR-006` em `docs/adrs/`.
+  - [x] Pull Request aberto a partir da branch `chore/T-002-setup-sidekiq-cron-redis`.
 
 #### [ ] `T-003`: Migration e Model de Usuário (User) com Credenciais Únicas e Bcrypt
 - **Status:** 🟡 **Pronta para Iniciar** (Depende da base de código da `T-001`)
