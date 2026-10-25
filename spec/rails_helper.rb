@@ -13,6 +13,8 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 
+Rails.root.glob("spec/support/**/*.rb").sort_by(&:to_s).each { |f| require f }
+
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
   config.use_transactional_fixtures = true
