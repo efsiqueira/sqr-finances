@@ -118,7 +118,7 @@ Em `spec/models/user_spec.rb`, validar:
 
 ## 5. Definition of Done (DoD)
 
-- [ ] Migration executada e refletida em `db/schema.rb`.
-- [ ] `bundle exec rspec spec/models/user_spec.rb` passa com 100% dos cenários verdes.
-- [ ] `bundle exec rubocop` sem ofensas.
-- [ ] Formalizar a `docs/adrs/ADR-007-stateful-session-authentication-with-bcrypt.md` a partir do rascunho em `potential-adrs/must-document/AUTH/`.
+- [x] Migration executada e refletida em `db/schema.rb`.
+- [x] `bundle exec rspec spec/models/user_spec.rb` passa com 100% dos cenários verdes.
+- [x] `bundle exec rubocop` sem ofensas.
+- [x] Formalizar a `docs/adrs/ADR-007-stateful-session-authentication-with-bcrypt.md` a partir do rascunho em `potential-adrs/must-document/AUTH/`.

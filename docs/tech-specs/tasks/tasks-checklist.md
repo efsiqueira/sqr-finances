@@ -6,10 +6,10 @@ Este documento consolida o acompanhamento operacional e o status de implementaç
 
 ## 1. Visão Geral do Progresso
 
-- **Progresso Global:** `2 / 13 tasks (15.4%)`
-- **Tasks Concluídas com PR Aberto:** 2 (`T-001`, `T-002`)
-- **Tasks Desbloqueadas / Prontas para Execução:** 1 (`T-003`)
-- **Tasks Bloqueadas por Dependências:** 10 (`T-004` até `T-013`)
+- **Progresso Global:** `3 / 13 tasks (23.1%)`
+- **Tasks Concluídas:** 3 (`T-001`, `T-002`, `T-003`)
+- **Tasks Desbloqueadas / Prontas para Execução:** 3 (`T-004`, `T-005`, `T-006`)
+- **Tasks Bloqueadas por Dependências:** 7 (`T-007` até `T-013`)
 
 ### Legenda de Status
 - 🟢 `[x]` **Concluída / PR Aberto:** Tarefa implementada, testes e linting validados, ADR formalizada e Pull Request aberto.
@@ -22,12 +22,12 @@ Este documento consolida o acompanhamento operacional e o status de implementaç
 
 | ID | Status | Tech Spec | Título | Branch | Dependência | ADR Relacionada |
 |:---:|:---:|---|---|---|---|---|
-| `T-001` | 🟢 PR Aberto | [TS-T001](./TS-T001-bootstrap-rails-docker-rspec.md) | Bootstrap Rails 8, Docker Compose & Suíte RSpec | `chore/T-001-bootstrap-rails-docker-rspec` | Nenhuma | `ADR-005` (Formalizada) |
-| `T-002` | 🟢 PR Aberto | [TS-T002](./TS-T002-setup-sidekiq-cron-redis.md) | Configuração do Sidekiq 7, Sidekiq Cron & Redis Queue | `chore/T-002-setup-sidekiq-cron-redis` | `T-001` | `ADR-006` (Formalizada) |
-| `T-003` | 🟡 Pronta | [TS-T003](./TS-T003-user-model-and-migration.md) | Migration & Model User (Credenciais Únicas & Bcrypt) | `feat/T-003-user-model-and-migration` | `T-001` | `ADR-007` |
-| `T-004` | 🔴 Bloqueada | [TS-T004](./TS-T004-session-auth-and-tenant-isolation.md) | Autenticação Dual, Current.user & Isolamento 404 | `feat/T-004-session-auth-and-tenant-isolation` | `T-003` | `ADR-008` |
-| `T-005` | 🔴 Bloqueada | [TS-T005](./TS-T005-transaction-model-and-schema.md) | Migration & Model Transaction (Constraints & Índice) | `feat/T-005-transaction-model-and-schema` | `T-003` | `ADR-009` |
-| `T-006` | 🔴 Bloqueada | [TS-T006](./TS-T006-recurrence-model-and-soft-delete.md) | Migration & Model Recurrence (Soft-Delete) | `feat/T-006-recurrence-model-and-soft-delete` | `T-003` | `ADR-002` |
+| `T-001` | 🟢 Concluída | [TS-T001](./TS-T001-bootstrap-rails-docker-rspec.md) | Bootstrap Rails 8, Docker Compose & Suíte RSpec | `chore/T-001-bootstrap-rails-docker-rspec` | Nenhuma | `ADR-005` (Formalizada) |
+| `T-002` | 🟢 Concluída | [TS-T002](./TS-T002-setup-sidekiq-cron-redis.md) | Configuração do Sidekiq 7, Sidekiq Cron & Redis Queue | `chore/T-002-setup-sidekiq-cron-redis` | `T-001` | `ADR-006` (Formalizada) |
+| `T-003` | 🟢 Concluída | [TS-T003](./TS-T003-user-model-and-migration.md) | Migration & Model User (Credenciais Únicas & Bcrypt) | `feat/T-003-user-model-and-migration` | `T-001` | `ADR-007` (Formalizada) |
+| `T-004` | 🟡 Pronta | [TS-T004](./TS-T004-session-auth-and-tenant-isolation.md) | Autenticação Dual, Current.user & Isolamento 404 | `feat/T-004-session-auth-and-tenant-isolation` | `T-003` | `ADR-008` |
+| `T-005` | 🟡 Pronta | [TS-T005](./TS-T005-transaction-model-and-schema.md) | Migration & Model Transaction (Constraints & Índice) | `feat/T-005-transaction-model-and-schema` | `T-003` | `ADR-009` |
+| `T-006` | 🟡 Pronta | [TS-T006](./TS-T006-recurrence-model-and-soft-delete.md) | Migration & Model Recurrence (Soft-Delete) | `feat/T-006-recurrence-model-and-soft-delete` | `T-003` | `ADR-002` |
 | `T-007` | 🔴 Bloqueada | [TS-T007](./TS-T007-recurrence-execution-audit-model.md) | Migration & Model RecurrenceExecution (Idempotência) | `feat/T-007-recurrence-execution-audit-model` | `T-005, T-006` | `ADR-004` |
 | `T-008` | 🔴 Bloqueada | [TS-T008](./TS-T008-financial-aggregation-service.md) | FinancialAggregationService (SQL Pushdown) | `feat/T-008-financial-aggregation-service` | `T-005` | `ADR-001` |
 | `T-009` | 🔴 Bloqueada | [TS-T009](./TS-T009-recurrence-execution-service.md) | RecurrenceExecutionService (Materialização Atômica) | `feat/T-009-recurrence-execution-service` | `T-007` | `ADR-004` / `ADR-002` |
@@ -120,7 +120,7 @@ flowchart TD
 ### Onda 2: Infraestrutura Assíncrona & Identidade Base
 
 #### [x] `T-002`: Configuração do Sidekiq 7, Sidekiq Cron e Redis Queue
-- **Status:** 🟢 **Concluída com PR Aberto**
+- **Status:** 🟢 **Concluída (Mergeada na master)**
 - **Tech Spec:** [TS-T002-setup-sidekiq-cron-redis.md](./TS-T002-setup-sidekiq-cron-redis.md)
 - **Branch:** `chore/T-002-setup-sidekiq-cron-redis`
 - **Dependência:** `T-001`
@@ -135,18 +135,20 @@ flowchart TD
   - [x] Formalizar a `ADR-006` em `docs/adrs/`.
   - [x] Pull Request aberto a partir da branch `chore/T-002-setup-sidekiq-cron-redis`.
 
-#### [ ] `T-003`: Migration e Model de Usuário (User) com Credenciais Únicas e Bcrypt
-- **Status:** 🟡 **Pronta para Iniciar** (Depende da base de código da `T-001`)
+#### [x] `T-003`: Migration e Model de Usuário (User) com Credenciais Únicas e Bcrypt
+- **Status:** 🟢 **Concluída**
 - **Tech Spec:** [TS-T003-user-model-and-migration.md](./TS-T003-user-model-and-migration.md)
 - **Branch:** `feat/T-003-user-model-and-migration`
 - **Dependência:** `T-001`
-- **ADR a Formalizar:** `docs/adrs/ADR-007-stateful-session-authentication-with-bcrypt.md`
+- **ADR Formalizada:** [ADR-007: Stateful Session-Based Authentication with Rails has_secure_password (bcrypt) and Dual-Identifier Credentials](../../adrs/ADR-007-stateful-session-authentication-with-bcrypt.md)
+- **Pull Request:** [PR #3](https://github.com/efsiqueira/sqr-finances/pull/3)
 - **Definition of Done (DoD):**
-  - [ ] Migration executada e refletida em `db/schema.rb` (tabela `users` com unicidade de e-mail e username).
-  - [ ] Model `User` com `has_secure_password`, normalização de login e `.authenticate_by_login`.
-  - [ ] `bundle exec rspec spec/models/user_spec.rb` passa com 100% dos cenários verdes.
-  - [ ] `bundle exec rubocop` sem ofensas.
-  - [ ] Formalizar a `ADR-007` em `docs/adrs/`.
+  - [x] Migration executada e refletida em `db/schema.rb` (tabela `users` com unicidade de e-mail e username).
+  - [x] Model `User` com `has_secure_password`, normalização de login e `.authenticate_by_login`.
+  - [x] `bundle exec rspec spec/models/user_spec.rb` passa com 100% dos cenários verdes.
+  - [x] `bundle exec rubocop` sem ofensas.
+  - [x] Formalizar a `ADR-007` em `docs/adrs/`.
+  - [x] Pull Request aberto a partir da branch `feat/T-003-user-model-and-migration`.
 
 ---
 

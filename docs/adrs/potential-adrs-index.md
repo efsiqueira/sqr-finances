@@ -23,10 +23,10 @@
 | Server-Driven Reactive UI with Rails 8 and Hotwire | Architecture / Technology | 150 | [Link](./potential-adrs/must-document/WEB/server-driven-reactive-ui-with-rails-8-and-hotwire.md) |
 
 ### Module: AUTH
-| Title | Category | Score | File |
-|-------|----------|-------|------|
-| Logical Multi-Tenancy via Current.user Association Scoping and HTTP 404 Indistinguishability | Security | 145 | [Link](./potential-adrs/must-document/AUTH/logical-multi-tenancy-with-current-user-scoping-and-404-indistinguishability.md) |
-| Stateful Session-Based Authentication with Rails has_secure_password (bcrypt) and Dual-Identifier Credentials | Security | 120 | [Link](./potential-adrs/must-document/AUTH/stateful-session-authentication-with-bcrypt.md) |
+| Title | Category | Score | File | Status |
+|-------|----------|-------|------|--------|
+| Logical Multi-Tenancy via Current.user Association Scoping and HTTP 404 Indistinguishability | Security | 145 | [Link](./potential-adrs/must-document/AUTH/logical-multi-tenancy-with-current-user-scoping-and-404-indistinguishability.md) | Pending |
+| Stateful Session-Based Authentication with Rails has_secure_password (bcrypt) and Dual-Identifier Credentials | Security | 120 | [Formal ADR](../adrs/ADR-007-stateful-session-authentication-with-bcrypt.md) | Formalized (ADR-007) |
 
 ### Module: TXN
 | Title | Category | Score | File |
