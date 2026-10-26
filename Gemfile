@@ -21,7 +21,7 @@ gem "tailwindcss-rails"
 
 # Background job processing and scheduled cron execution
 gem "sidekiq", "~> 7.3"
-gem "sidekiq-cron", "~> 1.12"
+gem "sidekiq-cron", "~> 2.4"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 gem "bcrypt", "~> 3.1.7"
